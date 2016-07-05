@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="CapitolTrackMobile.ReportsPage"
+	  		xmlns:design="clr-namespace:CapitolTrackMobile;assembly=CapitolTrackMobile"
+			BindingContext="{x:Static design:ViewModelLocator.ReportsViewModel}"
+			 Icon="reports.png"
+			 Title="All Reports">
+
+
+        <StackLayout>
+            <Button Text="How many Reports?" x:Name="ButtonHowMany"/> 
+			<Label Margin="10,0"
+				    Text="{Binding ReportCount, StringFormat='{0} Reports'}"/>
+            <ListView ItemsSource="{Binding ReportsGrouped}"
+					ItemTapped="Handle_ItemTapped"
+					ItemSelected="Handle_ItemSelected"
+                    HasUnevenRows="true"
+                    GroupShortNameBinding = "{Binding Key}"
+                    IsGroupingEnabled = "true"
+                    GroupDisplayBinding = "{Binding Key}">
+
+
+
+                    <ListView x:Name="listView">
+
+                    <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                    <TextCell Text="{Binding ReportCategory}" />
+						
+					</DataTemplate>
+
+				</ListView.ItemTemplate>
+
+			</ListView>
+
+			
+                    <!--
+			
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+						
+                            <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+							<Label Grid.Column="1"
+                                       Text="{Binding ReportCategory}"
+									   VerticalOptions="End"/>
+							<Label Grid.Column="1"
+                                       Grid.Row="1"
+                                       VerticalOptions="Start"
+                                       Text="{Binding ReportName}"/>
+
+                            </Grid>
+						
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                -->
+			
+            </ListView>
+        </StackLayout>
+
+</ContentPage>
