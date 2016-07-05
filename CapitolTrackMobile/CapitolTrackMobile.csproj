@@ -76,16 +76,9 @@
       <DependentUpon>UpcomingAppointmentsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.cs" />
-    <Compile Include="Models\ReportList.cs" />
-    <Compile Include="Helpers\Grouping.cs" />
-    <Compile Include="Helpers\ReportHelper.cs" />
-    <Compile Include="ViewModels\ReportsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
-    <Folder Include="Models\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
