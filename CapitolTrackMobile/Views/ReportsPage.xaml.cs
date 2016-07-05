@@ -1,28 +1,45 @@
-﻿using Xamarin.Forms;
-using Reports.ViewModels;
-using CapitolTrackMobile.Models;
+﻿using System;
+using Xamarin.Forms;
 using System.Collections.Generic;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Linq;
 
-namespace CapitolTrackMobile.Views
+namespace CapitolTrackMobile
 {
 	public partial class ReportsPage : ContentPage
 	{
 		public ReportsPage()
 		{
-			BindingContext = new ReportsViewModel();
+			InitializeComponent();
+			listView.ItemsSource = new List<ReportCategoryList>(){
+				new ReportCategoryList() { ReportCategoryTitle = "All Office Reports"},
+				new ReportCategoryList() { ReportCategoryTitle = "Amanda Browne"},
+				new ReportCategoryList() { ReportCategoryTitle = "Andrew Ulmer"},
+				new ReportCategoryList() { ReportCategoryTitle = "Ariel Soriano"},
+				new ReportCategoryList() { ReportCategoryTitle = "Ashley Martin"},
+				new ReportCategoryList() { ReportCategoryTitle = "Bills By Due Date"},
+				new ReportCategoryList() { ReportCategoryTitle = "Bill Count"},
+				new ReportCategoryList() { ReportCategoryTitle = "Brad"},
+				new ReportCategoryList() { ReportCategoryTitle = "Chad"},
+				new ReportCategoryList() { ReportCategoryTitle = "Committees"},
+				new ReportCategoryList() { ReportCategoryTitle = "Committees By Room"},
+				new ReportCategoryList() { ReportCategoryTitle = "Dan"},
+				new ReportCategoryList() { ReportCategoryTitle = "Frank"},
+				new ReportCategoryList() { ReportCategoryTitle = "Gary"},
+			};
+
 		}
 
-		void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-		=> ((ListView)sender).SelectedItem = null;
-
-		void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		async void ReportCategoryClicked(object sender, EventArgs e)
 		{
-			var report = ((ListView)sender).SelectedItem as ReportsPage;
-			if (report == null)
-				return;
+			await Navigation.PushAsync(new ReportCategoryPage());
 		}
+
+	}
+
+
+	public class ReportCategoryList
+	{
+		public string ReportCategoryTitle { get; set; }
+
 	}
 }
+
