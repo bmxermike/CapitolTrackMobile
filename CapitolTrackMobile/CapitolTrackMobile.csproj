@@ -81,9 +81,11 @@
     <Compile Include="Views\ReportCategoryPage.xaml.cs">
       <DependentUpon>ReportCategoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ReportListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
