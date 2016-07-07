@@ -8,7 +8,7 @@
 		<StackLayout>
 			<SearchBar Text="Search" />
 
-			<ListView  x:Name="listView">
+			<ListView  x:Name="searchListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Measure}" Detail="{Binding Author}" />

@@ -9,7 +9,7 @@ namespace CapitolTrackMobile
 		public SearchPage()
 		{
 			InitializeComponent();
-			listView.ItemsSource = new List<BillSearchRow>(){
+			searchListView.ItemsSource = new List<BillSearchRow>(){
 				new BillSearchRow() { Measure = "AB 1", Author = "Eldridge", Topic = "Guns and Ammo"},
 				new BillSearchRow() { Measure = "AB 2", Author = "Smith", Topic = "Drugs"},
 				new BillSearchRow() { Measure = "SB 120", Author = "Jackson", Topic = "Education"}
